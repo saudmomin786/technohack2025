@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class FibonacciGenerator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt user for upper limit
+        System.out.print("Enter the upper limit for Fibonacci sequence: ");
+        int limit = scanner.nextInt();
+        
+        // Generate Fibonacci sequence
+        generateFibonacci(limit);
+
+        scanner.close();
+    }
+
+    public static void generateFibonacci(int limit) {
+        int first = 0, second = 1;
+
+        System.out.println("Fibonacci sequence up to " + limit + ":");
+        
+        while (first <= limit) {
+            System.out.print(first + " ");
+            int next = first + second;
+            first = second;
+            second = next;
+        }
+    }
+}
